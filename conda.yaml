@@ -1,0 +1,19 @@
+name: image-processing
+
+channels:
+  - conda-forge
+
+dependencies:
+  # Python and Jupyter
+  - python=3.10.6
+  - ipykernel
+
+  # Data Engineering
+  - pandas
+
+  # Miscellaneous
+  - tqdm
+
+  # Testing and Code Quality
+  - autopep8
+  - pylint

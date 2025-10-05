@@ -13,11 +13,11 @@ class Convulation:
     def conv_nd(self) -> np.ndarray:
         """convulation method for 1D and 2D arrays(matrices)"""
 
-        pass
+        
     
 
 
 if __name__ == "__main__":
     
-    input = np.array()
-    kernel = np.array()
+    input = np.array([[3,3,2,1,0,0,0,1,3,1]])
+    kernel = np.array([1, 0, -1])

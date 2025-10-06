@@ -11,11 +11,10 @@ class Convulution:
         self.kernel = kernel
 
     def conv_1d(self) -> np.ndarray:
-        """convulution method for 1D and 2D arrays(matrices)"""
+        """convulution method for 1D arrays"""
 
         output = []
-        kernel_length = len(self.kernel)
-        strides = [self.input_matrix[idx: idx+3] for idx in range(len(self.input_matrix)) if len(self.input_matrix[idx: idx+3]) == kernel_length]
+        strides = [self.input_matrix[idx: idx+3] for idx in range(len(self.input_matrix)) if len(self.input_matrix[idx: idx+3]) == len(self.kernel)]
         for array in strides:
             output.append(float(sum([array[i]*self.kernel[i] for i in range(len(self.kernel))])))            
         return output

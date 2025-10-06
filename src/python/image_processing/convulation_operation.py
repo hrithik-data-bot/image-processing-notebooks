@@ -13,11 +13,12 @@ class Convulution:
     def conv_nd(self) -> np.ndarray:
         """convulution method for 1D and 2D arrays(matrices)"""
 
-        output_array = []
+        output = []
         kernel_length = len(self.kernel)
         strides = [self.input_matrix[idx: idx+3] for idx in range(len(self.input_matrix)) if len(self.input_matrix[idx: idx+3]) == kernel_length]
-            
-        return strides
+        for array in strides:
+            output.append(float(sum([array[i]*self.kernel[i] for i in range(len(self.kernel))])))            
+        return output
     
 
 

@@ -19,12 +19,3 @@ class Convulution:
         for array in strides:
             output.append(float(sum([array[i]*self.kernel[i] for i in range(len(self.kernel))])))            
         return output
-    
-
-
-if __name__ == "__main__":
-    
-    input = np.array([3,3,2,1,0,0,0,1,3,1])
-    kernel = np.array([1, 0, -1])
-    obj = Convulution(input_matrix=input, kernel=kernel)
-    print(obj.conv_nd())

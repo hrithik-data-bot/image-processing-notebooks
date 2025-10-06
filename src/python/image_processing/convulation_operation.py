@@ -1,4 +1,4 @@
-"""module for convulation opearation"""
+"""module for convulution opearation"""
 
 import numpy as np
 
@@ -10,7 +10,7 @@ class Convulution:
         self.input_matrix = input_matrix
         self.kernel = kernel
 
-    def conv_nd(self) -> np.ndarray:
+    def conv_1d(self) -> np.ndarray:
         """convulution method for 1D and 2D arrays(matrices)"""
 
         output = []

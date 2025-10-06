@@ -2,12 +2,12 @@
 
 import numpy as np
 
-class Convulution:
+class Convulution1D:
     
-    def __init__(self, input_matrix: np.ndarray, kernel: np.ndarray) -> None:
-        """__init__ method for Convulation Class"""
+    def __init__(self, input_array: np.ndarray, kernel: np.ndarray) -> None:
+        """__init__ method for Convulation1D Class"""
 
-        self.input_matrix = input_matrix
+        self.input_array = input_array
         self.kernel = kernel
 
     def conv_1d(self) -> np.ndarray:
@@ -18,3 +18,12 @@ class Convulution:
         for array in strides:
             output.append(float(sum([array[i]*self.kernel[i] for i in range(len(self.kernel))])))            
         return output
+
+
+class Convulution2D:
+
+    def __init__(self, input_matrix: np.ndarray, kernel: np.ndarray):
+        """__init__ method for Convulation2D Class"""
+
+        self.input_matrix = input_matrix
+        self.kernel = kernel

@@ -27,3 +27,8 @@ class Convulution2D:
 
         self.input_matrix = input_matrix
         self.kernel = kernel
+
+    def conv_2d(self) -> np.ndarray:
+        """convulution method for 2D arrays"""
+
+        pass

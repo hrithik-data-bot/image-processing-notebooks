@@ -1,5 +1,6 @@
 """module for convulution opearation"""
 
+from typing import Tuple
 import numpy as np
 
 class Convulution1D:
@@ -28,6 +29,16 @@ class Convulution2D:
         self.input_matrix = input_matrix
         self.kernel = kernel
 
+
+    def _output_shape(self) -> Tuple:
+        """method calculates shape of output matrix 
+           Note:- No Padding and 1 Stride
+        """
+        output_w = (self.input_matrix.shape[0]-self.kernel.shape[0])+1  
+        output_h = (self.input_matrix.shape[1]-self.kernel.shape[1])+1
+        return output_w, output_h
+
+
     def conv_2d(self) -> np.ndarray:
         """convulution method for 2D arrays"""
 
@@ -41,14 +52,16 @@ class Convulution2D:
                 current_sub_matrix = self.input_matrix[current_row: current_row+kernel_shape[0], current_col: current_col_until]
                 if current_sub_matrix.shape == kernel_shape:
                     sub_matrices.append(current_sub_matrix)
-        return sub_matrices
+        
+        interim_matrix = np.array(sub_matrices).reshape(self._output_shape())
+        return interim_matrix
         
 
         
 
 if __name__ == "__main__":
     np.random.seed(52)
-    input_matrix = np.random.randint(low=0, high=10, size=(9,9))
+    input_matrix = np.random.randint(low=0, high=10, size=(6,6))
     kernel = np.array([[1,1,1], [0,0,0], [-1,-1,-1]])
     obj = Convulution2D(input_matrix=input_matrix, kernel=kernel)
     print(obj.conv_2d())

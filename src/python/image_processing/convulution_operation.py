@@ -31,4 +31,13 @@ class Convulution2D:
     def conv_2d(self) -> np.ndarray:
         """convulution method for 2D arrays"""
 
-        pass
+        kernel_shape = self.kernel.shape
+        return kernel_shape
+    
+
+if __name__ == "__main__":
+    np.random.seed(52)
+    input_matrix = np.random.randint(low=0, high=10, size=(9,9))
+    kernel = np.array([[1,1,1], [0,0,0], [-1,-1,-1]])
+    obj = Convulution2D(input_matrix=input_matrix, kernel=kernel)
+    print(obj.conv_2d())

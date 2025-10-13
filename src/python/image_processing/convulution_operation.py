@@ -31,18 +31,20 @@ class Convulution2D:
     def conv_2d(self) -> np.ndarray:
         """convulution method for 2D arrays"""
 
-        print(self.input_matrix)
         sub_matrices = []
         kernel_shape = self.kernel.shape
         for col in range(self.input_matrix.shape[1]):
             current_col = col
             current_col_until = current_col + 3
-            current_sub_matrix = self.input_matrix[0: kernel_shape[0],
-                                                   current_col: current_col_until]
-            if current_sub_matrix.shape == kernel_shape:
-                sub_matrices.append(current_sub_matrix)
-        print(sub_matrices)
-    
+            for row in range(input_matrix.shape[0]):
+                current_row = row
+                current_sub_matrix = self.input_matrix[current_row: current_row+kernel_shape[0], current_col: current_col_until]
+                if current_sub_matrix.shape == kernel_shape:
+                    sub_matrices.append(current_sub_matrix)
+        return sub_matrices
+        
+
+        
 
 if __name__ == "__main__":
     np.random.seed(52)

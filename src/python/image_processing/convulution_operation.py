@@ -57,13 +57,3 @@ class Convulution2D:
         interim_matrix = np.array(sub_matrices)
         final_array = np.array([sum(self._dot_product(self.kernel, matrix).flatten()) for matrix in interim_matrix]).reshape(self._output_shape())
         return final_array
-        
-
-        
-
-if __name__ == "__main__":
-    np.random.seed(52)
-    input_matrix = np.random.randint(low=0, high=10, size=(6,6))
-    kernel = np.array([[1,1,1], [0,0,0], [-1,-1,-1]])
-    obj = Convulution2D(input_matrix=input_matrix, kernel=kernel)
-    print(obj.conv_2d())

@@ -50,7 +50,7 @@ class Convulution2D:
         kernel_shape = self.kernel.shape
         for col in range(self.input_matrix.shape[1]):
             current_col_until = col + 3
-            for row in range(input_matrix.shape[0]):
+            for row in range(self.input_matrix.shape[0]):
                 current_sub_matrix = self.input_matrix[row: row+kernel_shape[0], col: current_col_until]
                 if current_sub_matrix.shape == kernel_shape:
                     sub_matrices.append(current_sub_matrix)

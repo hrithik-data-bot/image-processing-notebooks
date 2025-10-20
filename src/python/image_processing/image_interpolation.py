@@ -6,14 +6,12 @@ from dataclasses import dataclass
 class ImageInterPolation():
     """class for image interpolation"""
 
-    pass
+    def nearest_neighbour_interpolation(self) -> float:
+        """calculates intensity value using KNN method"""
 
-def nearest_neighbour_interpolation(self) -> float:
-    """calculates intensity value using KNN method"""
-
-    pass
+        pass
 
 
-def bilinear_interpolation(self) -> float:
-    
-    pass
+    def bilinear_interpolation(self) -> float:
+        """calculates intensity value using Bilinear method"""
+        pass

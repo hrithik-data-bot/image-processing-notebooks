@@ -14,11 +14,6 @@ class ImageInterPolation():
     coordinate_value_12: Tuple[Tuple, float] # {(x1, y2): Q12}
     coordinate_value_22: Tuple[Tuple, float] # {(x2, y2): Q22}
 
-
-    def return_frame(self) -> None:
-        """return the frame of coordinates and new value"""
-        pass
-
     
     def nearest_neighbour_interpolation(self, new_coordinate: Tuple) -> float:
         """calculates intensity value using KNN method"""
@@ -36,5 +31,6 @@ if __name__ == "__main__":
     obj = ImageInterPolation(coordinate_value_11=((0,0), 11), coordinate_value_21=((2,0), 4),
                              coordinate_value_12=((2,2), 45), coordinate_value_22=((0,2), 27))
     print(obj.nearest_neighbour_interpolation(new_coordinate=(0.5,1.8)))
+    obj.return_frame((0.5, 1.8))
 
     

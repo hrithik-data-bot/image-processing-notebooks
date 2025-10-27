@@ -1,6 +1,6 @@
 """module having nearest neighbour and bilinear interpolation"""
 
-from typing import Tuple, Dict
+from typing import Tuple
 from dataclasses import dataclass, asdict
 from matplotlib import pyplot as plt
 
@@ -9,10 +9,10 @@ from matplotlib import pyplot as plt
 class ImageInterPolation():
     """class for image interpolation 2X2"""
 
-    coordinate_value_11: Dict[Tuple, float] # {(x1, y1): Q11} 
-    coordinate_value_21: Dict[Tuple, float] # {(x2, y1): Q21}
-    coordinate_value_12: Dict[Tuple, float] # {(x1, y2): Q12}
-    coordinate_value_22: Dict[Tuple, float] # {(x2, y2): Q22}
+    coordinate_value_11: Tuple[Tuple, float] # {(x1, y1): Q11} 
+    coordinate_value_21: Tuple[Tuple, float] # {(x2, y1): Q21}
+    coordinate_value_12: Tuple[Tuple, float] # {(x1, y2): Q12}
+    coordinate_value_22: Tuple[Tuple, float] # {(x2, y2): Q22}
 
 
     def return_frame(self) -> None:
@@ -26,7 +26,6 @@ class ImageInterPolation():
 
         rounded_value = tuple(round(value) for value in new_coordinate)
         return [value[1] for value in asdict(self).values() if value[0]==rounded_value][0]
-        
 
 
     def bilinear_interpolation(self) -> float:

@@ -13,10 +13,11 @@ class ImageInterPolation():
     coordinate_value_22: Tuple[Tuple, float] # ((x2, y2), Q22)
     
 
-    def nearest_neighbour_interpolation(self) -> float:
+    def nearest_neighbour_interpolation(self, new_coordinate: Tuple) -> float:
         """calculates intensity value using KNN method"""
 
-        pass
+        rounded_value = (round(value) for value in new_coordinate)
+        
 
 
     def bilinear_interpolation(self) -> float:

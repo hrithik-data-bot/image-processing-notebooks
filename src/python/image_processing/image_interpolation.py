@@ -20,7 +20,6 @@ class ImageInterPolation():
         pass
 
     
-
     def nearest_neighbour_interpolation(self, new_coordinate: Tuple) -> float:
         """calculates intensity value using KNN method"""
 
